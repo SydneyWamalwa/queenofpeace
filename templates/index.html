@@ -6,25 +6,25 @@
     <title>Queen Of Peace</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: beige;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
+       body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
 
-        nav {
+nav {
     background-color: #343a40;
     padding: 15px 0;
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 1000; /* Adjust the z-index as needed */
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,94 +32,84 @@
 
 #logo {
     max-height: 40px;
-    margin-right: 20px; /* Add some right margin to the logo for spacing */
+    margin-right: 20px;
     margin-left: 20px;
 }
 
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
 
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            text-align: right;
-        }
+nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 50px;
+}
 
-        nav ul li {
-            display: inline-block;
-            margin-left: 20px;
-            margin-right: 50px;
-        }
+nav ul li:first-child {
+    margin-left: 0;
+}
 
-        nav ul li:first-child {
-            margin-left: 0;
-        }
-
-        /* Add this style to target the specific class */
 nav ul li a.donate-link {
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
     font-size: 16px;
-    padding: 8px 15px; /* Add padding to create rounded borders */
-    border-radius: 20px; /* Set border-radius for rounded corners */
-    border: 2px solid #ffffff; /* Set border color */
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 2px solid #ffffff;
 }
 
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+}
 
+nav ul li a:hover {
+    text-decoration: none;
+    color: orange;
+}
 
+#carousel {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 45px;
+}
 
+.carousel-inner img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
 
-        nav ul li a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: bold;
-            font-size: 16px;
-        }
+#about, #donate, #comments {
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+    background-color: beige;
+    padding: 30px;
+    border-radius: 8px;
+}
 
-        nav ul li a:hover{
-            text-decoration: none;
-            color: orange;
-        }
+h2 {
+    color: #343a40;
+    font-size: 28px;
+}
 
-        #logo {
-            max-height: 40px;
-        }
+h3 {
+    color: brown;
+}
 
-        #carousel {
-            width: 100%;
-            overflow: hidden; /* To make sure the carousel stays within the screen width */
-            margin-top: 45px;
-        }
+p {
+    color: #555;
+}
 
-        .carousel-inner img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-        }
-
-        #about, #donate, #comments {
-            text-align: center;
-            margin: 20px 0;
-            width: 100%;
-            background-color: beige;
-            padding: 30px;
-            border-radius: 8px;
-        }
-
-        h2 {
-            color: #343a40;
-            font-size: 28px; /* Updated font size */
-        }
-
-        h3 {
-            color: brown; /* Updated color */
-        }
-
-        p {
-            color: #555;
-        }
-
-        form {
+form {
     margin-top: 20px;
     background-color: beige;
     padding: 20px;
@@ -132,116 +122,115 @@ nav ul li a.donate-link {
     margin-right: auto;
 }
 
+form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
 
-        form label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-        }
+form input,
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
-        form input, form textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
+form button {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
-        form button {
-            background-color: #343a40;
-            color: #ffffff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+#commentList {
+    margin-top: 20px;
+}
 
-        #commentList {
-            margin-top: 20px;
-        }
+footer {
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
 
-        footer {
-            background-color: #343a40;
-            color: #ffffff;
-            text-align: center;
-            padding: 10px 0;
-            width: 100%;
-        }
+#work {
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+    background-color: beige;
+    padding: 30px;
+    border-radius: 8px;
+}
 
-        #work {
-            text-align: center;
-            margin: 20px 0;
-            width: 100%;
-            background-color: beige;
-            padding: 30px;
-            border-radius: 8px;
-        }
+h2 {
+    color: #343a40;
+    font-size: 28px;
+}
 
-        h2 {
-            color: #343a40;
-            font-size: 28px;
-        }
+p {
+    color: black;
+}
 
+.work-item {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
 
-        p {
-            color: black;
-        }
+.work-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
 
-        .work-item {
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
+.work-item:hover img {
+    transform: scale(1.1);
+}
 
-        .work-item img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.3s ease-in-out;
-        }
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
 
-        .work-item:hover img {
-            transform: scale(1.1);
-        }
+.overlay-content {
+    color: #ffffff;
+    text-align: center;
+}
 
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.6);
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
+.overlay:hover {
+    opacity: 1;
+}
 
-        .overlay-content {
-            color: #ffffff;
-            text-align: center;
-        }
+.learn-more-btn {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
 
-        .overlay:hover {
-            opacity: 1;
-        }
+.learn-more-btn:hover {
+    text-decoration: none;
+    color: orange;
+}
 
-        .learn-more-btn {
-            background-color: #343a40;
-            color: #ffffff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 4px;
-            margin-top: 10px;
-        }
-
-        .learn-more-btn:hover{
-            text-decoration: none;
-            color: orange;
-        }
-
-        #subscribe {
+#subscribe {
     text-align: center;
     margin: 20px 0;
     width: 100%;
@@ -318,7 +307,7 @@ nav ul li a.donate-link {
     font-size: 16px;
 }
 
-#impact h2{
+#impact h2 {
     color: brown;
 }
 
@@ -336,59 +325,28 @@ nav ul li a.donate-link {
     font-size: 28px;
 }
 
-#founder p {
-    color: #555;
-}
-
 #founder iframe {
-    width: 100%;
-    max-width: 800px; /* Adjust the maximum width as needed */
-    height: 400px; /* Adjust the height as needed */
-    margin-top: 20px;
+    width: 800px;
+    height: 450px;
 }
 
-#contact {
-    text-align: center;
-    margin: 20px 0;
-    width: 100%;
-    background-color: beige;
-    padding: 30px;
-    border-radius: 8px;
-}
-
-#contact h2 {
-    color: #343a40;
-    font-size: 28px;
-}
-
-#contact p {
-    color: #555;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-#contact a {
-    color: #555;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#contact a:hover {
-    color: orange;
-}
-
-/* Add this media query at the end of your existing styles */
-@media (max-width: 100%) {
+@media (max-width: 768px) {
     body {
         align-items: stretch;
         width: 100%;
+        margin: 0;
     }
 
     nav {
         width: 100%;
-        position: relative;
+        position: fixed;
+        top: 0;
         background-color: #343a40;
         padding: 15px 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     nav ul {
@@ -411,8 +369,8 @@ nav ul li a.donate-link {
     }
 
     #logo {
-        max-height: 30px; /* Adjust the logo size for smaller screens */
-        margin: 0; /* Remove margins for smaller screens */
+        max-height: 30px;
+        margin: 0;
     }
 
     #carousel {
@@ -455,14 +413,18 @@ nav ul li a.donate-link {
 
     #founder iframe {
         width: 100%;
-        height: 250px; /* Adjust the height for smaller screens */
+        height: 250px;
     }
 
     footer {
         width: 100%;
         padding: 5px 0;
+        background-color: #343a40;
+        color: #ffffff;
+        text-align: center;
     }
 }
+
 
     </style>
         <link rel="icon" href="{{ url_for('static', filename='Queen-Of-Peace-Organization.ico') }}">
