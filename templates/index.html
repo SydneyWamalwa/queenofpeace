@@ -377,6 +377,81 @@ nav ul li a.donate-link {
     color: orange;
 }
 
+/* Add this media query at the end of your existing styles */
+@media (max-width: 768px) {
+    nav {
+        position: relative;
+        background-color: #343a40;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    nav ul li:first-child {
+        margin-top: 10px;
+    }
+
+    nav ul li a {
+        margin: 0;
+    }
+
+    #logo {
+        max-height: 30px; /* Adjust the logo size for smaller screens */
+        margin: 0; /* Remove margins for smaller screens */
+    }
+
+    #carousel {
+        margin-top: 20px;
+    }
+
+    .carousel-inner img {
+        height: auto;
+    }
+
+    #about, #work, #impact, #founder, #donate, #subscribe, #comments, #contact {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    form input, form textarea {
+        width: 100%;
+    }
+
+    .work-item img {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .learn-more-btn {
+        margin-top: 10px;
+    }
+
+    #impact h2 {
+        font-size: 22px;
+    }
+
+    #founder iframe {
+        height: 250px; /* Adjust the height for smaller screens */
+    }
+
+    footer {
+        padding: 5px 0;
+    }
+}
 
 
     </style>
