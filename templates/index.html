@@ -378,10 +378,17 @@ nav ul li a.donate-link {
 }
 
 /* Add this media query at the end of your existing styles */
+/* Add this media query at the end of your existing styles */
 @media (max-width: 768px) {
+    body {
+        align-items: stretch;
+    }
+
     nav {
+        width: 100%;
         position: relative;
         background-color: #343a40;
+        padding: 15px 0;
     }
 
     nav ul {
@@ -409,15 +416,20 @@ nav ul li a.donate-link {
     }
 
     #carousel {
+        width: 100%;
+        overflow: hidden;
         margin-top: 20px;
     }
 
     .carousel-inner img {
+        width: 100%;
         height: auto;
     }
 
-    #about, #work, #impact, #founder, #donate, #subscribe, #comments, #contact {
+    section {
+        width: 100%;
         padding: 15px;
+        box-sizing: border-box;
     }
 
     h2 {
@@ -428,7 +440,8 @@ nav ul li a.donate-link {
         font-size: 16px;
     }
 
-    form input, form textarea {
+    form input,
+    form textarea {
         width: 100%;
     }
 
@@ -440,19 +453,16 @@ nav ul li a.donate-link {
         margin-top: 10px;
     }
 
-    #impact h2 {
-        font-size: 22px;
-    }
-
     #founder iframe {
+        width: 100%;
         height: 250px; /* Adjust the height for smaller screens */
     }
 
     footer {
+        width: 100%;
         padding: 5px 0;
     }
 }
-
 
     </style>
         <link rel="icon" href="{{ url_for('static', filename='Queen-Of-Peace-Organization.ico') }}">
