@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            color: #343a40;
+            text-align: center;
+        }
+
+        #commentList {
+            width: 100%;
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .comment {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .comment h3 {
+            color: #007bff;
+        }
+
+        .comment p {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Comments</h2>
+
+    <div id="commentList">
+        <!-- Comments will be dynamically added here using JavaScript -->
+    </div>
+
+    <script>
+        // Function to dynamically add comments to the commentList div
+        function displayComments() {
+            var commentListDiv = document.getElementById('commentList');
+
+            // Clear existing comments
+            commentListDiv.innerHTML = "";
+
+            // Fetch comments from the server
+            fetch('/get_comments')
+                .then(response => response.json())
+                .then(commentsData => {
+                    // Loop through the commentsData and create HTML for each comment
+                    commentsData.forEach(comment => {
+                        var commentDiv = document.createElement('div');
+                        commentDiv.classList.add('comment');
+
+                        var nameHeading = document.createElement('h3');
+                        nameHeading.textContent = comment.name;
+
+                        var commentParagraph = document.createElement('p');
+                        commentParagraph.textContent = comment.comment;
+
+                        commentDiv.appendChild(nameHeading);
+                        commentDiv.appendChild(commentParagraph);
+
+                        commentListDiv.appendChild(commentDiv);
+                    });
+                })
+                .catch(error => console.error('Error fetching comments:', error));
+        }
+
+        // Call the displayComments function when the page loads
+        window.onload = function () {
+            displayComments();
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queen Of Peace</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: beige;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        nav {
+    background-color: #343a40;
+    padding: 15px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Adjust the z-index as needed */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    max-height: 40px;
+    margin-right: 20px; /* Add some right margin to the logo for spacing */
+    margin-left: 20px;
+}
+
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: right;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-left: 20px;
+            margin-right: 50px;
+        }
+
+        nav ul li:first-child {
+            margin-left: 0;
+        }
+
+        /* Add this style to target the specific class */
+nav ul li a.donate-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 15px; /* Add padding to create rounded borders */
+    border-radius: 20px; /* Set border-radius for rounded corners */
+    border: 2px solid #ffffff; /* Set border color */
+}
+
+
+
+
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover{
+            text-decoration: none;
+            color: orange;
+        }
+
+        #logo {
+            max-height: 40px;
+        }
+
+        #carousel {
+            width: 100%;
+            overflow: hidden; /* To make sure the carousel stays within the screen width */
+            margin-top: 45px;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        #about, #donate, #comments {
+            text-align: center;
+            margin: 20px 0;
+            width: 100%;
+            background-color: beige;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #343a40;
+            font-size: 28px; /* Updated font size */
+        }
+
+        h3 {
+            color: brown; /* Updated color */
+        }
+
+        p {
+            color: #555;
+        }
+
+        form {
+    margin-top: 20px;
+    background-color: beige;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #commentList {
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        #work {
+            text-align: center;
+            margin: 20px 0;
+            width: 100%;
+            background-color: beige;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #343a40;
+            font-size: 28px;
+        }
+
+
+        p {
+            color: black;
+        }
+
+        .work-item {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .work-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .work-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .overlay-content {
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .overlay:hover {
+            opacity: 1;
+        }
+
+        .learn-more-btn {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .learn-more-btn:hover{
+            text-decoration: none;
+            color: orange;
+        }
+
+        #subscribe {
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+    background-color: beige;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+#subscribe h2 {
+    color: #343a40;
+    font-size: 28px;
+}
+
+#subscribe form {
+    margin-top: 20px;
+    background-color: beige;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#subscribe label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+#subscribe input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#subscribe button {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#subscribe button:hover {
+    background-color: orange;
+}
+
+#impact {
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+    background-color: beige;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.impact-item {
+    margin-bottom: 20px;
+}
+
+.impact-item h3 {
+    color: #343a40;
+    font-size: 20px;
+}
+
+.impact-item p {
+    color: #555;
+    font-size: 16px;
+}
+
+#impact h2{
+    color: brown;
+}
+
+#founder {
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+    background-color: beige;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+#founder h2 {
+    color: #343a40;
+    font-size: 28px;
+}
+
+#founder p {
+    color: #555;
+}
+
+#founder iframe {
+    width: 100%;
+    max-width: 800px; /* Adjust the maximum width as needed */
+    height: 400px; /* Adjust the height as needed */
+    margin-top: 20px;
+}
+
+#contact {
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+    background-color: beige;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+#contact h2 {
+    color: #343a40;
+    font-size: 28px;
+}
+
+#contact p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#contact a {
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contact a:hover {
+    color: orange;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="/static/images/Queen Of Peace Organization.png" alt="Logo" id="logo">
+        <ul>
+            <li><a href="#carousel">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#donate" class="donate-link">Donate</a></li>
+            <li><a href="#founder">Our Founder</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/static/images/queen1.jpg" class="d-block w-100" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/images/queen2.jpg" class="d-block w-100" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/images/queen3.jpg" class="d-block w-100" alt="Image 3">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/images/queen4.jpg" class="d-block w-100" alt="Image 4">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Who we Are</h3>
+                    <p>Queen of Peace Foundation is a women-led and women-centered organization committed to the liberation of indigenous women across the vast arid plains of northern Kenya from the extreme social, cultural and economic barriers that exist in the conflict-prone region.</p>
+                    <p>The organization is led by a council of women diligently drawn from organized women groups in Isiolo, Marsabit, Samburu and Laikipia counties. Queen of Peace Foundation, thanks to the generous support of our partners, is helping the indigenous women of northern Kenya to understand their rights, reclaim their voice and make valuable and visible contributions towards finding long-lasting solutions to the challenges facing the region, including insecurity, illiteracy, abject poverty, discrimination and gender-based violence.</p>
+                    <h3>What we do</h3>
+                    <p>We are supporting indigenous women of northern Kenya gain the skills, knowledge and resources they need to be at the forefront of influencing decisions that improve the health and wellbeing of their lives, families and communities</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/zcumRz2nthQ?si=GXfbR7sDLOAJEfSz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Areas Of Work</h3>
+
+                    <div class="row">
+                        <!-- Work Item 1 -->
+                        <div class="col-md-6">
+                            <div class="work-item">
+                                <img src="/static/images/queen1.jpg" alt="Image 1">
+                                <div class="overlay">
+                                    <div class="overlay-content">
+                                        <h3>Economic Empowerment and Environmental Rehabilitation Programme</h3>
+                                        <a href="/empowernment.html" class="learn-more-btn">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Work Item 2 -->
+                        <div class="col-md-6">
+                            <div class="work-item">
+                                <img src="/static/images/queen5.jpg" alt="Image 2">
+                                <div class="overlay">
+                                    <div class="overlay-content">
+                                        <h3>Women Rights Advocacy Program</h3>
+                                        <p></p>
+                                        <a href="/rights.html" class="learn-more-btn">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Work Item 3 -->
+                        <div class="col-md-6">
+                            <div class="work-item">
+                                <img src="/static/images/queen6.jpg" alt="Image 3">
+                                <div class="overlay">
+                                    <div class="overlay-content">
+                                        <h3>Women Governance and Leadership Programme</h3>
+                                        <a href="/governance.html" class="learn-more-btn">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Work Item 4 -->
+                        <div class="col-md-6">
+                            <div class="work-item">
+                                <img src="/static/images/queen7.jpg" alt="Image 4">
+                                <div class="overlay">
+                                    <div class="overlay-content">
+                                        <h3>Conflict prevention and response</h3>
+                                        <a href="/conflict.html" class="learn-more-btn">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>OUR IMPACT</h2>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="impact-item">
+                                <h3>Individual women trained</h3>
+                                <p id="womenTrained">0+</p>
+                                <p>On group savings and investments through our microfinance and microcredit initiative</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="impact-item">
+                                <h3>Trees planted</h3>
+                                <p id="treesPlanted">0+</p>
+                                <p>Through our greening northern Kenya initiative</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="impact-item">
+                                <h3>Students currently being supported</h3>
+                                <p id="studentsSupported">0+</p>
+                                <p>Through our bursary for indigenous communities initiative</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="founder">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Our Founder Talking About Pastrol Communities in Northern Kenya</h2>
+                    <!-- Add an iframe to embed the first video -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/MszhlIhVZ-U?si=H3WoF0Z3-AfifcEK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-6">
+                    <h2>Our Founder After Winning The U.S. Institute of Peace (USIP) Women Building Peace Award 2021</h2>
+                    <!-- Add an iframe to embed the second video -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/p1qZUyTanC0?si=cB446G7e2Dg3KW_y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="donate">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Donate to Us</h2>
+                    <!-- Add Paystack script -->
+                    <script src="https://js.paystack.co/v1/inline.js"></script>
+                    <form action="/store_data" method="post">
+                        <label for="amount">Donation Amount:</label>
+                        <input type="number" id="amount" name="amount" required>
+
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <input type="hidden" id="payment_reference" name="payment_reference" value="">
+
+
+                        <!-- Add a button to trigger Paystack pop-up -->
+                        <button type="button" id="purchaseButton">Donate Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Subscribe to Our Newsletter</h2>
+                    <form action="/subscribe" method="post">
+                        <label for="subscribe-email">Email Address:</label>
+                        <input type="email" id="subscribe-email" name="subscribe-email" required>
+
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="comments">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Comments</h2>
+                    <form action="/post_comment" method="post">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="comment">Your Comment:</label>
+                        <textarea id="comment" name="comment" rows="4" required></textarea>
+
+                        <button type="submit">Post Comment</button>
+                    </form>
+                    <div id="commentList">
+                        <!-- Comments will be dynamically added here using JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Contact Information</h2>
+                    <p>Email: <a href="mailto:info@queenofpeacefoundation.org">info@queenofpeacefoundation.org</a></p>
+                    <p>Tel: 0701444161</p>
+                    <p>Alt.Email: <a href="mailto:queenofpeacekenya@gmail.com">queenofpeacekenya@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2024 Queen Of Peace Foundation. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+
+    <script>
+        var paymentReference;
+
+        document.getElementById('purchaseButton').addEventListener("click", function () {
+            var email = document.getElementById('email').value;
+            var name = document.getElementById('name').value;
+            var amount = document.getElementById('amount').value;
+
+            // Check if the email is empty before proceeding
+            if (email.trim() === '') {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            paymentReference = 'REF' + Math.floor((Math.random() * 1000000000) + 1);
+            document.getElementById('payment_reference').value = paymentReference;
+
+            // Log the details for debugging
+            console.log('Email:', email);
+            console.log('Name:', name);
+            console.log('Payment Reference:', paymentReference);
+            console.log('Total Amount:', amount);
+
+            // Ensure Paystack script is fully loaded before initiating the payment
+            loadPaystackScript(function () {
+                payWithPaystack(email, name, amount);
+            });
+        });
+
+        function loadPaystackScript(callback) {
+            // Check if Paystack is already loaded
+            if (window.PaystackPop) {
+                callback();
+            } else {
+                // Load Paystack script dynamically
+                var script = document.createElement('script');
+                script.src = 'https://js.paystack.co/v1/inline.js';
+                script.onload = callback;
+                document.head.appendChild(script);
+            }
+        }
+
+        function payWithPaystack(email, name, totalAmount) {
+            var handler = PaystackPop.setup({
+                key: 'pk_test_5343c1cc7aacbd24d896d90925b3e722f3ef7e85',
+                email: email,
+                amount: totalAmount * 100, // Amount is in kobo
+                ref: paymentReference,
+                currency: 'KES',
+                onClose: function () {
+                    alert('Window closed.');
+                },
+                callback: function (response) {
+                    if (response.status === 'success') {
+                        submitdonationDetails();
+                    } else {
+                        alert('Payment failed: ' + response.message);
+                    }
+                }
+            });
+            handler.openIframe();
+        }
+
+        function submitdonationDetails() {
+    var xhr = new XMLHttpRequest();
+    var url = '/store_data';
+    var params = 'email=' + encodeURIComponent(document.getElementById('email').value)
+        + '&name=' + encodeURIComponent(document.getElementById('name').value)
+        + '&payment_reference=' + encodeURIComponent(paymentReference)
+        + '&amount=' + encodeURIComponent(document.getElementById('amount').value);
+
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    // Set up the callback to handle the response from the server
+    xhr.onload = function () {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            // The request was successful, handle the response if needed
+            console.log('Request successful:', xhr.responseText);
+        } else {
+            // The request failed, handle the error if needed
+            console.error('Request failed:', xhr.status, xhr.statusText);
+        }
+    };
+
+    // Send the request with the form data
+    xhr.send(params);
+}
+
+    // Function to animate numbers with special formatting for values greater than 1000
+    function animateValue(element, start, end, duration) {
+    var range = end - start;
+    var current = start;
+    var increment = end > start ? 1 : -1;
+    var stepTime = Math.abs(Math.floor(duration / range));
+    var obj = element;
+    var timer = setInterval(function () {
+        current += increment;
+        // Check if the current value is greater than or equal to 1000
+        if (current >= 100) {
+            // Format the current value as "1000+" instead of the actual number
+            obj.innerHTML = `${current.toLocaleString()}+`;
+        } else {
+            // Display the actual current value
+            obj.innerHTML = current;
+        }
+        if (current == end) {
+            clearInterval(timer);
+        }
+    }, stepTime);
+}
+
+
+
+    // Function to handle the animation of impact numbers
+    function animateImpactNumbers() {
+        // Call animateValue for each impact number
+        animateValue(document.getElementById('womenTrained'), 0, 350, 2000);
+        animateValue(document.getElementById('treesPlanted'), 0, 4000, 2000);
+        animateValue(document.getElementById('studentsSupported'), 0, 6, 2000);
+    }
+
+    // Trigger the animation when the window has finished loading
+    window.onscroll = animateImpactNumbers;
+
+
+
+        // The rest of your script remains unchanged
+    </script>
+
+
+</body>
+</html>
