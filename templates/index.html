@@ -329,21 +329,26 @@ nav ul li a.donate-link {
     background-color: beige;
     padding: 30px;
     border-radius: 8px;
+    display: flex; /* Set the display property to flex */
+    flex-direction: column; /* Stack the child elements vertically */
+    align-items: center; /* Align items at the center horizontally */
 }
 
 #founder h2 {
     color: #343a40;
     font-size: 28px;
+    margin-bottom: 20px; /* Add margin at the bottom of the heading */
 }
 
 #founder p {
     color: #555;
+    margin-bottom: 20px; /* Add margin at the bottom of the paragraph */
 }
 
 #founder iframe {
     width: 100%;
-    max-width: 800px; /* Adjust the maximum width as needed */
-    height: 400px; /* Adjust the height as needed */
+    max-width: 800px;
+    height: 400px;
     margin-top: 20px;
 }
 
@@ -376,6 +381,85 @@ nav ul li a.donate-link {
 #contact a:hover {
     color: orange;
 }
+
+/* Add this style to your existing CSS */
+.boardrow {
+    display: flex;
+    justify-content: space-around;
+}
+
+.boarditem {
+    text-align: center;
+    margin: 10px;
+}
+
+.boarditem img {
+    margin-bottom: 10px;
+}
+
+.boarditem {
+            position: relative; /* Add relative positioning */
+        }
+
+        .read-more-content {
+            display: none;
+            position: absolute;
+            top: 100%; /* Position below the boarditem */
+            left: 0;
+            background-color: beige; /* Add a background to cover underlying content */
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            z-index: 1; /* Ensure it's above other content */
+        }
+
+        .read-more-link {
+            cursor: pointer;
+            color: blue;
+        }
+
+        #board {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 20px; /* Add margin between the heading and board items */
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .boarditem {
+            text-align: center;
+            margin-bottom: 20px; /* Add margin between board items */
+            width: 30%; /* Adjust the width as needed */
+        }
+
+        .boarditem img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .read-more-content {
+            display: none;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .read-more-link {
+            cursor: pointer;
+            color: blue;
+        }
+
+
 
 /* Add this media query at the end of your existing styles */
 @media (max-width: 100%) {
@@ -468,10 +552,26 @@ nav ul li a.donate-link {
         padding: 5px 0;
     }
 }
+.org h3{
+    text-align: center;
+}
 
     </style>
         <link rel="icon" href="{{ url_for('static', filename='Queen-Of-Peace-Organization.ico') }}">
+        <script>
+            function toggleReadMore(id) {
+                var content = document.getElementById(`read-more-content-${id}`);
+                var link = document.getElementById(`read-more-link-${id}`);
 
+                if (content.style.display === "none" || content.style.display === "") {
+                    content.style.display = "block";
+                    link.innerText = "Read Less";
+                } else {
+                    content.style.display = "none";
+                    link.innerText = "Read More";
+                }
+            }
+        </script>
 </head>
 <body>
 
@@ -629,6 +729,13 @@ nav ul li a.donate-link {
         </div>
     </section>
 
+    <section class="org">
+        <div>
+            <h3>Organization Structure</h3>
+            <img src="/static/images/Screenshot 2024-01-18 130238.png" alt="organization structure">
+        </div>
+    </section>
+
     <section id="founder">
         <div class="container">
             <div class="row">
@@ -638,7 +745,7 @@ nav ul li a.donate-link {
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/MszhlIhVZ-U?si=H3WoF0Z3-AfifcEK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="col-md-6">
-                    <h2>Our Founder After Winning The U.S. Institute of Peace (USIP) Women Building Peace Award 2021</h2>
+                    <h2>Our Founder - USIP Women Building Peace Award 2021 Winner</h2>
                     <!-- Add an iframe to embed the second video -->
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/p1qZUyTanC0?si=cB446G7e2Dg3KW_y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
@@ -646,11 +753,48 @@ nav ul li a.donate-link {
         </div>
     </section>
 
+    <section id="board">
+        <h3>Our Board</h3>
+        <div class="container">
+
+        <div class="boarditem">
+            <img src="/static/images/board1.jpg" alt="member1">
+            <h2>Angela Sanau Paswa</h2>
+            <p>Angela Sanau Paswa works at Maasai Mara Wildlife Conservancies Association (MMWCA) as the Senior Programmes Officer - Gender and Youth. She is responsible for spearheading technical and programmatic interventions focusing on gender equity across conservancies in the Greater Maasai Mara.</p>
+            <a id="read-more-link-1" class="read-more-link" onclick="toggleReadMore(1)">Read More</a>
+            <div id="read-more-content-1" class="read-more-content">
+                <p>Angela is the founder of the Maasai Mara Women forum, an umbrella organization for women from the Mara ecosystem. She leads initiatives to enhance the capacity of women leaders and advocates for women’s and girls’ rights within the conservancies. She holds a Bachelor’s degree in Political Science and Anthropology.</p>
+            </div>
+        </div>
+
+        <div class="boarditem">
+            <img src="/static/images/board2.png" alt="member2">
+            <h2>Josephine Eregae Kirion</h2>
+            <p>Holder of an Msc Governance and Leadership. BA Education. Worked as a Ward administrator -Ngaremara. Cec Education, Gender, Culture and Social Services.</p>
+            <a id="read-more-link-2" class="read-more-link" onclick="toggleReadMore(2)">Read More</a>
+            <div id="read-more-content-2" class="read-more-content">
+                <p>Also involved in Cec Water, Environment, Energy, Climate change, and Natural resources. Trustee of Water Sector Trust Fund.</p>
+            </div>
+        </div>
+
+        <div class="boarditem">
+            <img src="/static/images/board1.jpg" alt="member3">
+            <h2>Angela Sanau Paswa</h2>
+            <p>Angela Sanau Paswa works at Maasai Mara Wildlife Conservancies Association (MMWCA) as the Senior Programmes Officer - Gender and Youth. She is responsible for spearheading technical and programmatic interventions focusing on gender equity across conservancies in the Greater Maasai Mara.</p>
+            <a id="read-more-link-3" class="read-more-link" onclick="toggleReadMore(3)">Read More</a>
+            <div id="read-more-content-3" class="read-more-content">
+                <p>Angela holds a Bachelor’s degree in Political Science and Anthropology. Her passion is driven by strengthening women empowerment, working with communities to enhance internal governance structures, and promoting inclusive spaces. She is part of the Climate Justice Resilience Fund and an IVLP fellow alumna.</p>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
 
 
 
     <section id="donate">
-        <div class="container">
+        <div class="container-row">
             <div class="row">
                 <div class="col-md-12">
                     <h2>Donate to Us</h2>
