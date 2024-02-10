@@ -463,7 +463,7 @@ nav ul li a.donate-link {
 
 
 /* Add this media query at the end of your existing styles */
-@media (max-width: 100%) {
+/* @media (max-width: 100%) {
     body {
         align-items: stretch;
         width: 100%;
@@ -555,14 +555,19 @@ nav ul li a.donate-link {
 }
 .org h3{
     text-align: center;
-}
+} */
 
 /* Media query for iPhone 6 screen */
 @media only screen and (max-device-width: 375px) and (max-device-height: 667px) {
     /* Navbar styles */
     nav {
         padding: 10px 0;
+        width: 100%;
     }
+
+    nav ul {
+    text-align: center;
+}
 
     nav ul li {
         margin: 5px 0;
@@ -711,6 +716,23 @@ nav ul li a.donate-link {
     footer p {
         font-size: 12px;
     }
+    /* Ensure sections cover the entire width of the screen */
+section {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Center body content on smaller screens */
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    width: 100%;
+}
+
 }
     </style>
         <link rel="icon" href="{{ url_for('static', filename='Queen-Of-Peace-Organization.ico') }}">
