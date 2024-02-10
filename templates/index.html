@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Queen Of Peace</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -556,6 +557,161 @@ nav ul li a.donate-link {
     text-align: center;
 }
 
+/* Media query for iPhone 6 screen */
+@media only screen and (max-device-width: 375px) and (max-device-height: 667px) {
+    /* Navbar styles */
+    nav {
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    /* Logo styles */
+    #logo {
+        max-height: 30px;
+    }
+
+    /* Carousel styles */
+    #carousel {
+        margin-top: 20px;
+    }
+
+    .carousel-inner img {
+        height: 300px;
+    }
+
+    /* About section styles */
+    #about h3 {
+        font-size: 18px;
+    }
+
+    #about p {
+        font-size: 14px;
+    }
+
+    /* Work section styles */
+    #work h3 {
+        font-size: 18px;
+    }
+
+    .work-item img {
+        height: auto;
+    }
+
+    /* Impact section styles */
+    #impact h2 {
+        font-size: 24px;
+    }
+
+    .impact-item h3 {
+        font-size: 16px;
+    }
+
+    .impact-item p {
+        font-size: 14px;
+    }
+
+    /* Organization section styles */
+    .org h3 {
+        font-size: 18px;
+    }
+
+    /* Founder section styles */
+    #founder h2 {
+        font-size: 22px;
+    }
+
+    #founder iframe {
+        height: 200px;
+    }
+
+    /* Board section styles */
+    #board h3 {
+        font-size: 18px;
+    }
+
+    .boarditem h2 {
+        font-size: 16px;
+    }
+
+    .boarditem p {
+        font-size: 14px;
+    }
+
+    /* Donate section styles */
+    #donate h2 {
+        font-size: 18px;
+    }
+
+    form input[type="number"],
+    form input[type="text"],
+    form input[type="email"] {
+        width: 100%;
+        font-size: 14px;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+    form button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    /* Subscribe section styles */
+    #subscribe h2 {
+        font-size: 18px;
+    }
+
+    #subscribe form input[type="email"] {
+        width: 100%;
+        font-size: 14px;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+    #subscribe button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    /* Comments section styles */
+    #comments h2 {
+        font-size: 18px;
+    }
+
+    #comments form input[type="text"],
+    #comments form textarea {
+        width: 100%;
+        font-size: 14px;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+    #comments form button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    /* Contact section styles */
+    #contact h2 {
+        font-size: 18px;
+    }
+
+    #contact p {
+        font-size: 14px;
+    }
+
+    /* Footer styles */
+    footer p {
+        font-size: 12px;
+    }
+}
     </style>
         <link rel="icon" href="{{ url_for('static', filename='Queen-Of-Peace-Organization.ico') }}">
         <script>
