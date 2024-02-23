@@ -307,6 +307,8 @@ nav ul li a.donate-link {
 
 .impact-item {
     margin-bottom: 20px;
+    text-align: center;
+    width: calc(25% - 20px); /* Adjust width as needed */
 }
 
 .impact-item h3 {
@@ -322,6 +324,7 @@ nav ul li a.donate-link {
 #impact h2{
     color: brown;
 }
+
 
 #founder {
     text-align: center;
@@ -429,10 +432,12 @@ nav ul li a.donate-link {
             margin-bottom: 20px; /* Add margin between the heading and board items */
         }
 
+
         .container {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
+            text-align: center;
         }
 
         .boarditem {
@@ -458,6 +463,10 @@ nav ul li a.donate-link {
         .read-more-link {
             cursor: pointer;
             color: blue;
+        }
+
+        .row{
+            margin-left: 200px;
         }
 
 
@@ -788,13 +797,13 @@ nav ul li a.donate-link {
     </section>
 
     <section id="impact">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
+        <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+            <div class="row justify-content-center">
+                <div class="col-md-11 text-center pl-15">
                     <h2>OUR IMPACT</h2>
 
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="impact-item">
                                 <h3>Individual women trained</h3>
                                 <p id="womenTrained">0+</p>
@@ -802,7 +811,7 @@ nav ul li a.donate-link {
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="impact-item">
                                 <h3>Trees planted</h3>
                                 <p id="treesPlanted">0+</p>
@@ -810,7 +819,15 @@ nav ul li a.donate-link {
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-6">
+                            <div class="impact-item">
+                                <h3>Working with women groups</h3>
+                                <p id="women_groups">0+</p>
+                                <p>Through our Women empowerment initiative</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
                             <div class="impact-item">
                                 <h3>Students currently being supported</h3>
                                 <p id="studentsSupported">0+</p>
@@ -981,7 +998,8 @@ nav ul li a.donate-link {
 
 
     <footer>
-        <p>&copy; 2024 Queen Of Peace Initiative. All rights reserved.</p>
+        <p>&copy; 2024 Queen Of Peace Initiative. All rights reserved.</p><br>
+        <p>Developed by Dunda Technologies:+254714359080</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -1106,8 +1124,9 @@ nav ul li a.donate-link {
     // Function to handle the animation of impact numbers
     function animateImpactNumbers() {
         // Call animateValue for each impact number
-        animateValue(document.getElementById('womenTrained'), 0, 160, 2000);
+        animateValue(document.getElementById('womenTrained'), 0, 350, 2000);
         animateValue(document.getElementById('treesPlanted'), 0, 4000, 2000);
+        animateValue(document.getElementById('women_groups'), 0, 160, 2000);
         animateValue(document.getElementById('studentsSupported'), 0, 6, 2000);
     }
 
