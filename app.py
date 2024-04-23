@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from flask_session import Session
 from flask_bcrypt import Bcrypt
-from werkzeug import url_quote
+from urllib.parse import quote
 import sqlite3
 import os
 
