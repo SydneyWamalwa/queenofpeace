@@ -107,6 +107,15 @@ nav ul li a.donate-link {
             border-radius: 8px;
         }
 
+        #about{
+            margin-right: 100px;
+        }
+        #work{
+            margin-right: 100px;
+        }
+        #impact{
+            margin-right: 100px;
+        }
         h2 {
             color: #343a40;
             font-size: 28px; /* Updated font size */
@@ -169,14 +178,6 @@ nav ul li a.donate-link {
             width: 100%;
         }
 
-        #work {
-            text-align: center;
-            margin: 20px 0;
-            width: 100%;
-            background-color: beige;
-            padding: 30px;
-            border-radius: 8px;
-        }
 
         h2 {
             color: #343a40;
@@ -188,21 +189,46 @@ nav ul li a.donate-link {
             color: black;
         }
 
-        .work-item {
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
+        #work {
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+    background-color: beige;
+    padding: 30px;
+    border-radius: 8px;
+}
 
-        .work-item img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.3s ease-in-out;
-        }
+#work h2 {
+    color: #343a40;
+    font-size: 28px;
+}
 
-        .work-item:hover img {
-            transform: scale(1.1);
-        }
+#work p {
+    color: black;
+}
+
+.work-item-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.work-item {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    max-width: 300px;
+}
+
+.work-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.work-item:hover img {
+    transform: scale(1.1);
+}
 
         .overlay {
             position: absolute;
@@ -308,12 +334,13 @@ nav ul li a.donate-link {
 .impact-item {
     margin-bottom: 20px;
     text-align: center;
-    width: calc(25% - 20px); /* Adjust width as needed */
+    width: calc(75% - 20px); /* Adjust width as needed */
 }
 
 .impact-item h3 {
     color: #343a40;
     font-size: 20px;
+    text-align: center;
 }
 
 .impact-item p {
@@ -439,6 +466,7 @@ nav ul li a.donate-link {
             justify-content: space-around;
             flex-wrap: wrap;
             text-align: center;
+            width: 100%;
         }
 
         .boarditem {
@@ -733,9 +761,9 @@ nav ul li a.donate-link {
 
     <section id="work">
         <div class="container">
-            <div class="row">
+            <div>
                 <div class="col-md-12">
-                    <h3>Areas Of Work</h3>
+                    <h3 style="text-align: center; margin-left: 100px;">Areas Of Work</h3>
 
                     <div class="row">
                         <!-- Work Item 1 -->
@@ -798,10 +826,10 @@ nav ul li a.donate-link {
     </section>
 
     <section id="impact">
-        <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
-            <div class="row justify-content-center">
+        <div>
+            <div class="row">
                 <div class="col-md-11 text-center pl-15">
-                    <h2>OUR IMPACT</h2>
+                    <h2 style="text-align: center;">OUR IMPACT</h2>
 
                     <div class="row">
                         <div class="col-md-6">
@@ -844,7 +872,7 @@ nav ul li a.donate-link {
 
     <section class="org">
         <div>
-            <h3>Organization Structure</h3>
+            <h3 style="text-align: center; margin-left: 100px;">Organization Structure</h3>
             <img src="/static/images/Screenshot 2024-01-18 130238.png" alt="organization structure">
         </div>
     </section>
